@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.svg-background-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+}
+
+.blurry-gradient {
+  aspect-ratio: 900/450;
+  background-image: url("/blurry-gradient.svg");
+}
+
+.day {
+  aspect-ratio: 900/100;
+  background-image: url("/wave-day-top.svg");
+}
+
+.day-bottom {
+  aspect-ratio: 900/100;
+  background-image: url("/wave-day-bottom.svg");
+}
+
+.about-me-transition {
+  aspect-ratio: 900/200;
+  background-image: url("/wave-about-me-transition.svg");
+}
+
+.text-gradient {
+  background: linear-gradient(to bottom, rgb(244 114 182), rgb(30 64 175));
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
