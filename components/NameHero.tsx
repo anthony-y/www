@@ -3,7 +3,7 @@ const NameHero = () => {
     <div className="flex flex-col gap-6 align-center">
 
       <div className="flex flex-col gap-2">
-        <p className="text-gray-400">Hi, I'm</p>
+        <p className="text-gray-400 text-center md:text-left">Hi, I'm</p>
         <h1 className="text-5xl lg:text-7xl font-bold text-center">
           Anthony Baynham
         </h1>

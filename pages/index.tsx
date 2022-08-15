@@ -20,7 +20,7 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
 
       <div className="svg-background-cover about-me-transition -mt-[1px]"></div>
 
-      <section className="bg-white h-[60vh] lg:h-[33vh] lg:mb-24 w-[60%] mx-auto">
+      <section className="bg-white min-h-[33vh] w-[60%] mx-auto mb-[10vh]">
         <h1 className="flex justify-center text-black text-5xl font-bold align-center">About Me</h1>
 
         <div className="flex justify-center w-[50%] mx-auto">
