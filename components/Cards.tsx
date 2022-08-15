@@ -32,11 +32,12 @@ export const ImageCard = ({ title, image }: { title: string, image: ShowcaseImag
   </div>
 }
 
-export const SkillsCard = ({ skills }: { skills: Skill[] }) => {
+export const SkillsCard = ({ skills, iconSize }: { skills: Skill[], iconSize: number }) => {
   const gridSetup = (skills.length < 6 ? "grid-cols-2" : "grid-cols-3")
+  
   return <div className="p-6 flex flex-col bg-white rounded-lg shadow-md outline outline-1 outline-gray-100 h-full">
-    <div className={`grid ${gridSetup} grid-rows-2 grid-flow-col gap-10`}>
-      {skills.map((s) => <Image src={useSkillIcon(s)} width={100} height={100}/>)}
+    <div className={`grid ${gridSetup} grid-rows-2 grid-flow-col gap-8`}>
+      {skills.map((s) => <Image src={useSkillIcon(s)} width={iconSize} height={iconSize}/>)}
     </div>
   </div>
 }

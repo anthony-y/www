@@ -20,7 +20,7 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
 
       <div className="svg-background-cover about-me-transition -mt-[1px]"></div>
 
-      <section className="bg-white h-[60vh] w-[60%] mx-auto -my-20">
+      <section className="bg-white h-[60vh] lg:h-[33vh] lg:mb-24 w-[60%] mx-auto">
         <h1 className="flex justify-center text-black text-5xl font-bold align-center">About Me</h1>
 
         <div className="flex justify-center w-[50%] mx-auto">
@@ -53,7 +53,7 @@ export const getStaticProps = async () => {
     skills: new Array<Skill>('nextjs', 'ts', 'js', 'svelte', 'html', 'css', 'go', 'wordpress'),
     image: "/mrandmrs.png",
     colour: "bg-blue-400",
-    buttonClasses: "bg-gradient-to-r text-white from-blue-400 to-blue-600 hover:bg-gradient-to-br hover:text-blue-50/80 transition duration-300"
+    buttonClasses: "bg-gradient-to-l text-white from-blue-500 to-blue-600 hover:bg-gradient-to-br hover:text-blue-50/80 transition duration-300"
   }
 
   const systems: Domain = {
