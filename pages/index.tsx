@@ -20,11 +20,11 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
 
       <div className="svg-background-cover about-me-transition -mt-[1px]"></div>
 
-      <section className="bg-white h-[50vh] w-[60%] mx-auto -my-20">
+      <section className="bg-white h-[60vh] w-[60%] mx-auto -my-20">
         <h1 className="flex justify-center text-black text-5xl font-bold align-center">About Me</h1>
 
-        <div className="flex justify-center pt-8 w-[50%] mx-auto">
-          <article className="flex flex-col justify-center gap-2">
+        <div className="flex justify-center w-[50%] mx-auto">
+          <article className="flex pt-3 flex-col justify-center gap-2">
             <p>{`I’m currently a freelance full-stack developer, systems administrator and student. I’m looking for a new hybrid or remote opportunity as I head into this year of university.`}</p>
             <p>{`Although I’ve been working professionally as a programmer since just 2021, my most “starred” GitHub repository, SharpECS, is a library I wrote at age 14 – seven years ago.`}</p>
             <p>{`During the summer I reside on the south-coast, while the rest of the year I study Computer Science at the University of Sussex, and live in Brighton.`}</p>

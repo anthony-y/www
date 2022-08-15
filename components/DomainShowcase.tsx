@@ -2,7 +2,8 @@ import { Domain } from '../types'
 import { BasicCard, ImageCard, SkillsCard }  from './Cards'
 
 function DomainShowcase({ title, cardLines, skills, image, colour, buttonClasses }: Domain) {
-  return <section className={`${colour} min-h-[33vh] pb-12 md:pb-20`}>
+  const workaround = (title == "Web" ? "pt-0" : "pt-16")
+  return <section className={`${colour} min-h-[33vh] pb-12 md:pb-20 ${workaround}`}>
 
     <div className="container mx-auto">
 
