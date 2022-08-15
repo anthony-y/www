@@ -7,7 +7,7 @@ function TheApp({ Component, pageProps }) {
   return <div className="h-[100vh]">
     <Banner>
       <p>This site is a work-in-progress! Check developments at</p>
-      <a href="https://github.com/anthony-y/www"><span className="underline">https://github.com/anthony-y/www</span></a>
+      <a href="https://github.com/anthony-y/www"><span className="underline">github.com/anthony-y/www</span></a>
     </Banner>
 
     <Navbar>
