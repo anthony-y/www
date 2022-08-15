@@ -2,7 +2,9 @@
 module.exports = {
   images: {
     domains: ['cdn.jsdelivr.net'],
-    experimental: {
+  },
+  experimental: {
+    images: {
       unoptimized: true,
     },
   },
