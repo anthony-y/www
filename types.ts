@@ -1,17 +1,22 @@
+import { StaticImageData } from "next/image"
+import { ReactElement } from "react"
+
 export interface Project {
   title: string
   description: string
-  key: number
 }
 
-export type Skill = 'cpp' | 'c' | 'compiler' | 'js' | 'css' | 'html' | 'go' | 'python' | 'nginx' | 'wordpress'
+export type Skill = 'svelte' | 'cpp' | 'c' | 'csharp' | 'js' | 'css' | 'html' | 'go' | 'python' | 'nginx' | 'wordpress' | 'nextjs' | 'ts'
+
+export type ShowcaseImage = StaticImageData | string
 
 export interface Domain {
-  projects: Array<Project>
   title: string
+  cardLines: Array<string>
   skills: Array<Skill>
-  image: string
+  image: ShowcaseImage
   colour: string
+  buttonClasses: string
 }
 
 export type FrontpageProps = {

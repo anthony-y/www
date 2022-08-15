@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export function Navbar({ children }) {
   return <div className="">
-    <div className="flex flex-row gap-24 pt-6 pb-12 justify-center">
+    <div className="flex flex-row gap-24 pt-6 justify-center">
       {children}
     </div>
   </div>
