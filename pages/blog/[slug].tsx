@@ -14,4 +14,11 @@ export async function getStaticProps({ params }) {
   }
 }
 
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: false,
+  }
+}
+
 export default BlogPost
