@@ -1,13 +1,16 @@
 import { DomainShowcaseProps } from '../types'
 import { BasicCard, ImageCard, SkillsCard }  from './Cards'
-import ThemeContext from '../lib/theme'
+import { ThemeProvider } from '../lib/theme'
+import { useContext, useEffect, useState } from 'react'
 
 function DomainShowcase({title, cardLines, skills, image, darkColour, lightColour, buttonClasses}: DomainShowcaseProps) {
 
   const workaround = (title == "Web" ? "pt-0" : "pt-16")
 
-  return (<ThemeContext.Consumer>
-    {(currentTheme) => <section className={`${currentTheme == 'light' ? lightColour : darkColour} min-h-[33vh] pb-12 md:pb-20 ${workaround}`}>
+  let [theme, setTheme] = useContext(ThemeProvider)
+  
+  return (
+    <section className={`${theme == 'light' ? lightColour : darkColour} min-h-[33vh] pb-12 md:pb-20 ${workaround}`}>
 
       <div className="container mx-auto">
 
@@ -37,8 +40,7 @@ function DomainShowcase({title, cardLines, skills, image, darkColour, lightColou
           </a>
         </div>
       </div>
-    </section>}
-  </ThemeContext.Consumer>)
+    </section>)
 }
 
 export default DomainShowcase

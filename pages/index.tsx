@@ -2,25 +2,31 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import NameHero from '../components/NameHero'
 import DomainShowcase from '../components/DomainShowcase'
 import { DomainShowcaseProps, Project, Skill } from "../types"
+import { ThemeProvider } from '../lib/theme'
+import { useEffect, useState, useContext } from 'react'
 
 function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) {
+
+  let [theme, setTheme] = useContext(ThemeProvider)
+
   return <>
     <NameHero></NameHero>
 
     <div className="flex flex-col">
 
-      <div className="svg-background-cover day"></div>
+      {theme == 'light' && <div className={`svg-background-cover day -mt-[1px]`}></div>}
+      {theme == 'dark'  && <div className={`svg-background-cover wave-night -mt-[1px]`}></div>}
 
       <DomainShowcase {...domains[0]}/>
 
-      <div className="svg-background-cover day-bottom -mt-[1px]"></div>
+      <div className={`svg-background-cover ${theme == 'light' ? "day-bottom" : "wave-night-bottom"} -mt-[1px]`}></div>
 
       <DomainShowcase {...domains[1]}/>
 
-      <div className="svg-background-cover about-me-transition -mt-[1px]"></div>
+      <div className={`svg-background-cover ${theme == 'light' ? "about-me-transition" : "about-me-transition-night"}`}></div>
 
-      <section className="bg-white min-h-[33vh] w-[60%] mx-auto mb-[10vh]">
-        <h1 className="flex justify-center text-black text-5xl font-bold align-center">About Me</h1>
+      <section className="bg-white h-full w-full mx-auto pb-[20vh] dark:bg-dark dark:text-white -mt-[1px]">
+        <h1 className="flex justify-center text-black text-5xl font-bold align-center dark:text-white">About Me</h1>
 
         <div className="flex justify-center w-[50%] mx-auto">
           <article className="flex pt-3 flex-col justify-center gap-2">

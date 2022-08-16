@@ -1,10 +1,27 @@
 import '../styles/globals.css'
 import { Navbar, NavItem } from '../components/Nav'
 import Banner from '../components/Banner'
-import { createContext } from 'react'
-import ThemeContext from '../lib/theme'
+import { useEffect, useState, createContext } from 'react'
+import { ThemeProvider } from '../lib/theme'
 
 function TheApp({ Component, pageProps }) {
+
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    
+    document.documentElement.classList.add("dark")
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", e => {
+      if (e.matches && !document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.add("dark")
+        setTheme('dark')
+      } else {
+        document.documentElement.classList.remove("dark")
+        setTheme('light')
+      }
+    })
+  }, [])
 
   return <div className="h-full w-full container-xs container-sm">
     <Banner>
@@ -12,16 +29,30 @@ function TheApp({ Component, pageProps }) {
       <a href="https://github.com/anthony-y/www"><span className="underline">github.com/anthony-y/www</span></a>
     </Banner>
 
-    <Navbar>
-      <NavItem the_link="/">Showcase</NavItem>
-      <NavItem the_link="/blog">Blog</NavItem>
-      <NavItem the_link="https://github.com/anthony-y">GitHub</NavItem>
-      <NavItem the_link="/CV.pdf">C.V</NavItem>
-    </Navbar>
+    <ThemeProvider.Provider value={[theme, setTheme]}>
 
-    <ThemeContext.Provider value='dark'>
+      <Navbar>
+        <NavItem the_link="/">Showcase</NavItem>
+        <NavItem the_link="/blog">Blog</NavItem>
+        <NavItem the_link="https://github.com/anthony-y">GitHub</NavItem>
+        <NavItem the_link="/CV.pdf">C.V</NavItem>
+
+        <button onClick={() => {
+          if (theme == 'light') {
+            setTheme('dark')
+            document.documentElement.classList.add("dark")
+          } else {
+            setTheme('light')
+            document.documentElement.classList.remove("dark")
+          }
+        }}>
+          Toggle Theme
+        </button>
+      </Navbar>
+    
       <Component {...pageProps} />
-    </ThemeContext.Provider>
+
+    </ThemeProvider.Provider>
 
   </div>
 }

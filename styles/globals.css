@@ -19,14 +19,29 @@
   background-image: url("/shapes/wave-day-top.svg");
 }
 
+.wave-night {
+  aspect-ratio: 900/100;
+  background-image: url("/shapes/wave-night-top.svg");
+}
+
 .day-bottom {
   aspect-ratio: 900/100;
   background-image: url("/shapes/wave-day-bottom.svg");
 }
 
+.wave-night-bottom {
+  aspect-ratio: 900/100;
+  background-image: url("/shapes/wave-night-bottom.svg");
+}
+
 .about-me-transition {
   aspect-ratio: 900/200;
   background-image: url("/shapes/wave-about-me-transition.svg");
+}
+
+.about-me-transition-night {
+  aspect-ratio: 900/200;
+  background-image: url("/shapes/wave-night-about-me-transition.svg");
 }
 
 .text-gradient {
