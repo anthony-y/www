@@ -37,7 +37,7 @@ function TheApp({ Component, pageProps }) {
         <NavItem the_link="https://github.com/anthony-y">GitHub</NavItem>
         <NavItem the_link="/CV.pdf">C.V</NavItem>
 
-        <button onClick={() => {
+        <button className="dark:text-white transition" onClick={() => {
           if (theme == 'light') {
             setTheme('dark')
             document.documentElement.classList.add("dark")

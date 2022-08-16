@@ -11,7 +11,7 @@ export function Navbar({ children }) {
 export const NavItem = ({ children, the_link }) => {
   return <Link href={the_link}>
     <a>
-      <div className="text-lg transition hover:text-blue-400 dark:text-white">
+      <div className="text-lg transition hover:text-blue-400 dark:text-white dark:hover:text-myorange">
         {children}
       </div>
     </a>
