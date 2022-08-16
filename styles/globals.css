@@ -11,22 +11,22 @@
 
 .blurry-gradient {
   aspect-ratio: 900/450;
-  background-image: url("/blurry-gradient.svg");
+  background-image: url("/shapes/blurry-gradient.svg");
 }
 
 .day {
   aspect-ratio: 900/100;
-  background-image: url("/wave-day-top.svg");
+  background-image: url("/shapes/wave-day-top.svg");
 }
 
 .day-bottom {
   aspect-ratio: 900/100;
-  background-image: url("/wave-day-bottom.svg");
+  background-image: url("/shapes/wave-day-bottom.svg");
 }
 
 .about-me-transition {
   aspect-ratio: 900/200;
-  background-image: url("/wave-about-me-transition.svg");
+  background-image: url("/shapes/wave-about-me-transition.svg");
 }
 
 .text-gradient {
