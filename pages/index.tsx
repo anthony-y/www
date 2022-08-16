@@ -1,8 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import NameHero from '../components/NameHero'
 import DomainShowcase from '../components/DomainShowcase'
-import { Domain, Project, Skill } from "../types"
-import Image from 'next/image'
+import { DomainShowcaseProps, Project, Skill } from "../types"
 
 function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) {
   return <>
@@ -44,7 +43,7 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
 }
 
 export const getStaticProps = async () => {
-  const web: Domain = {
+  const web: DomainShowcaseProps = {
     cardLines: new Array<string>(
       "During the day, I build attractive digital marketing experiences",
       "I utilise modern JavaScript frameworks like SvelteKit and NextJS to deliver impressive sites for local businesses",
@@ -52,11 +51,12 @@ export const getStaticProps = async () => {
     title: "Web",
     skills: new Array<Skill>('nextjs', 'ts', 'js', 'svelte', 'html', 'css', 'go', 'wordpress'),
     image: "/mrandmrs.png",
-    colour: "bg-blue-400",
+    lightColour: "bg-blue-400",
+    darkColour: 'bg-myorange',
     buttonClasses: "bg-gradient-to-l text-white from-blue-500 to-blue-600 hover:bg-gradient-to-br hover:text-blue-50/80 transition duration-300"
   }
 
-  const systems: Domain = {
+  const systems: DomainShowcaseProps = {
     cardLines: new Array<string>(
       "I moonlight as a C++ developer",
       "I build things that go fast to solve hard problems and keep myself sharp",
@@ -65,7 +65,8 @@ export const getStaticProps = async () => {
     title: "Systems",
     skills: new Array<Skill>('c', 'cpp', 'go', 'csharp'),
     image: "/mrandmrs.png",
-    colour: "bg-blue-900",
+    lightColour: "bg-blue-900",
+    darkColour: 'bg-mygreen',
     buttonClasses: "bg-gradient-to-r text-white from-blue-700 to-blue-900 hover:bg-gradient-to-br hover:text-blue-50/80 transition duration-300"
   }
 

@@ -1,6 +1,5 @@
-import { Domain, Project, ShowcaseImage, Skill } from '../types'
+import { ShowcaseImage, Skill } from '../types'
 import Image from "next/image"
-import { ReactElement } from 'react'
 
 function useSkillIcon(s: Skill) {
   let url = ""

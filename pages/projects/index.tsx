@@ -1,4 +1,4 @@
-import WorkInProgress from "../../components/WIP"
+import WorkInProgress from "../../components/WorkInProgress"
 
 function AllProjects({ props }) {
   return <WorkInProgress name="The projects overview"></WorkInProgress>

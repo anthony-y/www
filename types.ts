@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image"
 import { ReactElement } from "react"
+import { domainToASCII } from "url"
 
 export interface Project {
   title: string
@@ -10,17 +11,20 @@ export type Skill = 'svelte' | 'cpp' | 'c' | 'csharp' | 'js' | 'css' | 'html' | 
 
 export type ShowcaseImage = StaticImageData | string
 
-export interface Domain {
+export type SiteTheme = 'light' | 'dark'
+
+export interface DomainShowcaseProps {
   title: string
   cardLines: Array<string>
   skills: Array<Skill>
   image: ShowcaseImage
-  colour: string
+  darkColour: string
+  lightColour: string
   buttonClasses: string
 }
 
 export type FrontpageProps = {
   props: {
-    domains: Array<Domain>,
+    domains: Array<DomainShowcaseProps>,
   }
 }

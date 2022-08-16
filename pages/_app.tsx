@@ -1,6 +1,8 @@
 import '../styles/globals.css'
 import { Navbar, NavItem } from '../components/Nav'
 import Banner from '../components/Banner'
+import { createContext } from 'react'
+import ThemeContext from '../lib/theme'
 
 function TheApp({ Component, pageProps }) {
 
@@ -17,7 +19,9 @@ function TheApp({ Component, pageProps }) {
       <NavItem the_link="/CV.pdf">C.V</NavItem>
     </Navbar>
 
-    <Component {...pageProps} />
+    <ThemeContext.Provider value='dark'>
+      <Component {...pageProps} />
+    </ThemeContext.Provider>
 
   </div>
 }
