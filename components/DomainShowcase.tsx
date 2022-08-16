@@ -28,7 +28,7 @@ function DomainShowcase({ title, cardLines, skills, image, colour, buttonClasses
         <SkillsCard skills={skills} iconSize={48}/>
         <BasicCard cardLines={cardLines} />
 
-        <a href="/projects" className={`${buttonClasses} flex flex-row p-6 justify-center align-center w-full text-xl rounded-lg outline outline-1 outline-blue-500`}>
+        <a href="https://github.com/anthony-y" className={`${buttonClasses} flex flex-row p-6 justify-center align-center w-full text-xl rounded-lg outline outline-1 outline-blue-500`}>
           <p className="my-auto">See projects</p>
         </a>
       </div>
