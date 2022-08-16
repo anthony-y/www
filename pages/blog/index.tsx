@@ -10,7 +10,7 @@ function AllBlogPosts({ posts }) {
 export async function getStaticProps() {
   return {
     props: {
-      
+      posts: []
     }
   }
 }
