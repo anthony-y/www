@@ -22,7 +22,7 @@ function useSkillIcon(s: Skill) {
 
 export const BasicCard = ({ cardLines }: { cardLines: string[] }) => {
   return <div className="p-4 flex flex-col justify-center gap-6 bg-white rounded-lg shadow-md outline outline-1 outline-gray-100 h-full">
-    {cardLines.map((l) => <p className="text-lg text-center">{l}.</p>)}
+    {cardLines.map((l,i) => <p key={i} className="text-lg text-center">{l}.</p>)}
   </div>
 }
 
@@ -37,7 +37,7 @@ export const SkillsCard = ({ skills, iconSize }: { skills: Skill[], iconSize: nu
   
   return <div className="p-6 flex flex-col bg-white rounded-lg shadow-md outline outline-1 outline-gray-100 h-full">
     <div className={`grid ${gridSetup} grid-rows-2 grid-flow-col gap-8`}>
-      {skills.map((s) => <Image src={useSkillIcon(s)} width={iconSize} height={iconSize}/>)}
+      {skills.map((s,i) => <Image key={i} src={useSkillIcon(s)} width={iconSize} height={iconSize}/>)}
     </div>
   </div>
 }
