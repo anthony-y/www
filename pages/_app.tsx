@@ -29,29 +29,27 @@ function TheApp({ Component, pageProps }) {
       <a href="https://github.com/anthony-y/www"><span className="underline">github.com/anthony-y/www</span></a>
     </Banner>
 
-    <ThemeProvider.Provider value={[theme, setTheme]}>
+    <Navbar>
+      <NavItem the_link="/">Showcase</NavItem>
+      <NavItem the_link="/blog">Blog</NavItem>
+      <NavItem the_link="https://github.com/anthony-y">GitHub</NavItem>
+      <NavItem the_link="/CV.pdf">C.V</NavItem>
 
-      <Navbar>
-        <NavItem the_link="/">Showcase</NavItem>
-        <NavItem the_link="/blog">Blog</NavItem>
-        <NavItem the_link="https://github.com/anthony-y">GitHub</NavItem>
-        <NavItem the_link="/CV.pdf">C.V</NavItem>
-
-        <button className="dark:text-white transition" onClick={() => {
-          if (theme == 'light') {
-            setTheme('dark')
-            document.documentElement.classList.add("dark")
-          } else {
-            setTheme('light')
-            document.documentElement.classList.remove("dark")
-          }
-        }}>
-          Toggle Theme
-        </button>
-      </Navbar>
+      <button className="dark:text-white transition" onClick={() => {
+        if (theme == 'light') {
+          setTheme('dark')
+          document.documentElement.classList.add("dark")
+        } else {
+          setTheme('light')
+          document.documentElement.classList.remove("dark")
+        }
+      }}>
+        Toggle Theme
+      </button>
+    </Navbar>
     
+    <ThemeProvider.Provider value={[theme, setTheme]}>
       <Component {...pageProps} />
-
     </ThemeProvider.Provider>
 
   </div>
