@@ -7,41 +7,50 @@ function DomainShowcase({title, cardLines, skills, image, darkColour, lightColou
   
   let [theme] = useContext(ThemeProvider)
 
+  // The bottom section needs more padding than the top one.
+  // TODO: I would like this to not be hard-coded.
   const workaround = (title == "Web" ? "pt-0" : "pt-16")
-  const linkStyles = `bg-gradient-to-br ${theme == 'light' ? 'from-blue-400 to-blue-600' : 'from-orange-600 to-orange-700'} dark:${lightColour} flex flex-row p-6 justify-center align-center w-full text-xl rounded-lg`
-  
-  return (
-    <section className={`${theme == 'light' ? lightColour : darkColour} min-h-[33vh] pb-12 md:pb-20 ${workaround}`}>
 
-      <div className="container mx-auto">
+  const linkStyles = `
+    bg-gradient-to-br
+    ${theme == 'light' ? 'from-blue-400 to-blue-600' : 'from-orange-600 to-orange-700'}
+    dark:${lightColour}
+    flex flex-row p-6 justify-center align-center
+    w-full
+    text-xl
+    rounded-lg
+  `
 
-        <h1 className="flex justify-center text-white text-5xl font-bold pb-6 md:pb-12">
-          {title}
-        </h1>
+  return <section className={`${theme == 'light' ? lightColour : darkColour} min-h-[33vh] pb-12 md:pb-20 ${workaround}`}>
+    <div className="container mx-auto">
 
-        {/* Grid layout for large displays */}
-        <div className="hidden lg:grid grid-cols-3 gap-4">
+      <h2 className="flex justify-center text-white text-5xl font-bold pb-6 md:pb-12">
+        {title}
+      </h2>
 
-          <SkillsCard skills={skills} iconSize={72}/>
-          <BasicCard cardLines={cardLines} />
+      {/* Grid layout for large displays */}
+      <div className="hidden lg:grid grid-cols-3 gap-4">
 
-          <a href="/https://github.com/anthony-y" className={linkStyles}>
-            <p className="my-auto text-white dark:text-orange-900">View projects</p>
-          </a>
-        </div>
+        <SkillsCard skills={skills} iconSize={72}/>
+        <BasicCard cardLines={cardLines} />
 
-        {/* Stacked flex layout for small displays */}
-        <div className="flex flex-col gap-4 lg:hidden">
-
-          <SkillsCard skills={skills} iconSize={48}/>
-          <BasicCard cardLines={cardLines} />
-
-          <a href="https://github.com/anthony-y" className={linkStyles}>
-            <p className="my-auto text-white dark:text-orange-900">View projects</p>
-          </a>
-        </div>
+        <a href="https://github.com/anthony-y" className={linkStyles}>
+          <p className="my-auto text-white dark:text-orange-900">View projects</p>
+        </a>
       </div>
-    </section>)
+
+      {/* Stacked flex layout for small displays */}
+      <div className="flex flex-col gap-4 lg:hidden">
+
+        <SkillsCard skills={skills} iconSize={48}/>
+        <BasicCard cardLines={cardLines} />
+
+        <a href="https://github.com/anthony-y" className={linkStyles}>
+          <p className="my-auto text-white dark:text-orange-900">View projects</p>
+        </a>
+      </div>
+    </div>
+  </section>
 }
 
 export default DomainShowcase

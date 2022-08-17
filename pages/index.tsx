@@ -1,9 +1,9 @@
 import { InferGetStaticPropsType } from 'next'
 import NameHero from '../components/NameHero'
 import DomainShowcase from '../components/DomainShowcase'
-import { DomainShowcaseProps, Project, Skill } from "../types"
+import { DomainShowcaseProps, Skill } from "../types"
 import { ThemeProvider } from '../lib/theme'
-import { useEffect, useState, useContext } from 'react'
+import { useContext } from 'react'
 
 function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) {
 
@@ -12,18 +12,28 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
   return <>
     <NameHero></NameHero>
 
-    <div className="flex flex-col">
+    <section className="flex flex-col">
 
-      {theme == 'light' && <div className={`svg-background-cover day -mt-[1px]`}></div>}
-      {theme == 'dark'  && <div className={`svg-background-cover wave-night -mt-[1px]`}></div>}
+      {
+      // SVG shapes - we render based on `theme` so that the graphics will update reactively when the theme is changed.
+      // Using Tailwind's `dark:` variant does not work.
+      theme == 'light' && <div className={`svg-background-cover day -mt-[1px]`}></div> ||
+      theme == 'dark'  && <div className={`svg-background-cover wave-night -mt-[1px]`}></div>
+      }
+
       <DomainShowcase {...domains[0]}/>
 
-      {theme == 'light' && <div className={`svg-background-cover day-bottom -mt-[1px]`}></div>}
-      {theme == 'dark'  && <div className={`svg-background-cover wave-night-bottom -mt-[1px]`}></div>}
+      {
+      theme == 'light' && <div className={`svg-background-cover day-bottom -mt-[1px]`}></div> ||
+      theme == 'dark'  && <div className={`svg-background-cover wave-night-bottom -mt-[1px]`}></div>
+      }
+
       <DomainShowcase {...domains[1]}/>
 
-      {theme == 'light' && <div className={`svg-background-cover about-me-transition -mt-[1px]`}></div>}
-      {theme == 'dark' && <div className={`svg-background-cover about-me-transition-night -mt-[1px]`}></div>}
+      {
+      theme == 'light' && <div className={`svg-background-cover about-me-transition -mt-[1px]`}></div> ||
+      theme == 'dark'  && <div className={`svg-background-cover about-me-transition-night -mt-[1px]`}></div>
+      }
 
       <section className="bg-white h-full w-full mx-auto pb-[20vh] dark:bg-dark dark:text-white -mt-[1px]">
         <h1 className="flex justify-center text-black text-5xl font-bold align-center dark:text-white">About Me</h1>
@@ -45,7 +55,7 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
         </article>
       </section>
 
-    </div>
+    </section>
   </>
 }
 
