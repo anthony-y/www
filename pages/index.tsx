@@ -51,7 +51,7 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
       <section className={`bg-white max-h-[33vh] svg-background-cover ${theme == 'light' ? "blurry-gradient" : "blurry-gradient-night"}`}>
         <article className="container mx-auto text-white">
           <h1 className="pt-28 flex justify-center text-5xl font-bold align-center">Contact</h1>
-          <a href="mailto:anthonybaynham2001@gmail.com"><p className="hover:text-gray-700 transition flex flex-col justify-center items-center text-center pt-3 text-2xl">anthonybaynham2001@gmail.com</p></a>
+          <a href="mailto:anthonybaynham2001@gmail.com"><p className="hover:underline transition flex flex-col justify-center items-center text-center pt-3 text-2xl">anthonybaynham2001@gmail.com</p></a>
         </article>
       </section>
 
