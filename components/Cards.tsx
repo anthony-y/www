@@ -20,7 +20,7 @@ function useSkillIcon(s: Skill) {
 }
 
 export const BasicCard = ({ cardLines }: { cardLines: string[] }) => {
-  return <div className="p-4 flex flex-col justify-center gap-6 bg-white dark:bg-dark rounded-lg shadow-md h-full">
+  return <div className="transition duration-500 p-4 flex flex-col justify-center gap-6 bg-white dark:bg-dark rounded-lg shadow-md h-full">
     {cardLines.map((l,i) => <p key={i} className="text-lg text-center dark:text-white">{l}.</p>)}
   </div>
 }
@@ -34,7 +34,7 @@ export const ImageCard = ({ title, image }: { title: string, image: ShowcaseImag
 export const SkillsCard = ({ skills, iconSize, theme }: { skills: Skill[], iconSize: number, theme: SiteTheme }) => {
   const gridSetup = (skills.length < 6 ? "grid-cols-2" : "grid-cols-3")
   
-  return <div className="p-6 flex flex-col bg-white dark:bg-dark rounded-lg shadow-md h-full">
+  return <div className="transition duration-500 p-6 flex flex-col bg-white dark:bg-dark rounded-lg shadow-md h-full">
     <div className={`grid ${gridSetup} grid-rows-2 grid-flow-col gap-8`}>
       {skills.map((s,i) => <Image key={i} src={useSkillIcon(s)} width={iconSize} height={iconSize} className={`${s == 'nextjs' && theme == 'dark' ? "image-black-to-white" : ""}`}/>)}
     </div>
