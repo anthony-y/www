@@ -15,7 +15,7 @@ const NameHero = () => {
           Full-stack web developer by day
         </h2>
 
-        <h2 className="text-3xl font-serif text-darkSecondary">
+        <h2 className="text-3xl font-serif text-lightSecondary dark:text-white/40">
           Systems programmer by night
         </h2>
       </div>
