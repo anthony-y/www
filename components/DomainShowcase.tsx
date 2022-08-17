@@ -12,7 +12,7 @@ function DomainShowcase({title, cardLines, skills, image, darkColour, lightColou
   const workaround = (title == "Web" ? "pt-0" : "pt-16")
 
   const linkStyles = `
-    transition duration-500 ${title == "Web" ? "hover:bg-blue-400 bg-white/30 dark:hover:bg-orange-500 dark:bg-white/10" : "hover:bg-blue-900/60 dark:hover:bg-violet-900/80 dark:bg-white/10 bg-white/30"}
+    transition duration-500 ${title == "Web" ? "hover:bg-blue-400 bg-dark/30 dark:hover:bg-orange-500" : "hover:bg-blue-900/60 dark:hover:bg-violet-900/80 dark:bg-white/10 bg-white/30"}
     flex flex-row p-6 justify-center align-center
     w-full
     text-xl
@@ -29,7 +29,7 @@ function DomainShowcase({title, cardLines, skills, image, darkColour, lightColou
       {/* Grid layout for large displays */}
       <div className="hidden lg:grid grid-cols-3 gap-4">
 
-        <SkillsCard skills={skills} iconSize={72}/>
+        <SkillsCard skills={skills} iconSize={72} theme={theme}/>
         <BasicCard cardLines={cardLines} />
 
         <a href="https://github.com/anthony-y" className={linkStyles}>
@@ -40,7 +40,7 @@ function DomainShowcase({title, cardLines, skills, image, darkColour, lightColou
       {/* Stacked flex layout for small displays */}
       <div className="flex flex-col gap-4 lg:hidden">
 
-        <SkillsCard skills={skills} iconSize={48}/>
+        <SkillsCard skills={skills} iconSize={48} theme={theme}/>
         <BasicCard cardLines={cardLines} />
 
         <a href="https://github.com/anthony-y" className={linkStyles}>

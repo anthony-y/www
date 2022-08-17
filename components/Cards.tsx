@@ -1,4 +1,4 @@
-import { ShowcaseImage, Skill } from '../types'
+import { ShowcaseImage, SiteTheme, Skill } from '../types'
 import Image from "next/image"
 
 function useSkillIcon(s: Skill) {
@@ -20,23 +20,23 @@ function useSkillIcon(s: Skill) {
 }
 
 export const BasicCard = ({ cardLines }: { cardLines: string[] }) => {
-  return <div className="p-4 flex flex-col justify-center gap-6 bg-white rounded-lg shadow-md outline outline-1 outline-gray-100 h-full">
-    {cardLines.map((l,i) => <p key={i} className="text-lg text-center">{l}.</p>)}
+  return <div className="p-4 flex flex-col justify-center gap-6 bg-white dark:bg-dark rounded-lg shadow-md h-full">
+    {cardLines.map((l,i) => <p key={i} className="text-lg text-center dark:text-white">{l}.</p>)}
   </div>
 }
 
 export const ImageCard = ({ title, image }: { title: string, image: ShowcaseImage }) => {
-  return <div className="p-2 flex flex-col bg-white rounded-lg shadow-md outline outline-1 outline-gray-100 h-full">
+  return <div className="p-2 flex flex-col bg-white rounded-lg shadow-md h-full">
     <Image src={image} width={1280} height={720}/>
   </div>
 }
 
-export const SkillsCard = ({ skills, iconSize }: { skills: Skill[], iconSize: number }) => {
+export const SkillsCard = ({ skills, iconSize, theme }: { skills: Skill[], iconSize: number, theme: SiteTheme }) => {
   const gridSetup = (skills.length < 6 ? "grid-cols-2" : "grid-cols-3")
   
-  return <div className="p-6 flex flex-col bg-white rounded-lg shadow-md outline outline-1 outline-gray-100 h-full">
+  return <div className="p-6 flex flex-col bg-white dark:bg-dark rounded-lg shadow-md h-full">
     <div className={`grid ${gridSetup} grid-rows-2 grid-flow-col gap-8`}>
-      {skills.map((s,i) => <Image key={i} src={useSkillIcon(s)} width={iconSize} height={iconSize}/>)}
+      {skills.map((s,i) => <Image key={i} src={useSkillIcon(s)} width={iconSize} height={iconSize} className={`${s == 'nextjs' && theme == 'dark' ? "image-black-to-white" : ""}`}/>)}
     </div>
   </div>
 }

@@ -1,6 +1,4 @@
 import { StaticImageData } from "next/image"
-import { ReactElement } from "react"
-import { domainToASCII } from "url"
 
 export interface Project {
   title: string

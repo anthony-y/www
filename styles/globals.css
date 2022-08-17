@@ -60,3 +60,7 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
+
+.image-black-to-white {
+  filter: invert(100%)
+}
