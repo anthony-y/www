@@ -6,11 +6,13 @@ import { ThemeProvider } from '../lib/theme'
 
 function TheApp({ Component, pageProps }) {
 
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
-    
-    document.documentElement.classList.add("dark")
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add("dark")
+      setTheme('dark')
+    }
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", e => {
       if (e.matches && !document.documentElement.classList.contains("dark")) {
