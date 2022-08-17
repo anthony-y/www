@@ -35,7 +35,7 @@ function TheApp({ Component, pageProps }) {
       <NavItem the_link="https://github.com/anthony-y">GitHub</NavItem>
       <NavItem the_link="/CV.pdf">C.V</NavItem>
 
-      <button className="dark:text-white transition" onClick={() => {
+      <button className={`text-gray-300 dark:text-gray-400 transition hover:text-black dark:hover:text-white`} onClick={() => {
         if (theme == 'light') {
           setTheme('dark')
           document.documentElement.classList.add("dark")
@@ -44,7 +44,7 @@ function TheApp({ Component, pageProps }) {
           document.documentElement.classList.remove("dark")
         }
       }}>
-        Toggle Theme
+        {theme == 'light' ? 'Light mode' : 'Dark mode'}
       </button>
     </Navbar>
     
