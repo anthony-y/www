@@ -24,8 +24,8 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
       <DomainShowcase {...domains[0]}/>
 
       {
-      theme == 'light' && <div className={`svg-background-cover day-bottom -mt-[1px]`}></div> ||
-      theme == 'dark'  && <div className={`svg-background-cover wave-night-bottom -mt-[1px]`}></div>
+      theme == 'light' && <div className={`svg-background-cover day-bottom -mb-[1px]`}></div> ||
+      theme == 'dark'  && <div className={`svg-background-cover wave-night-bottom -mb-[1px]`}></div>
       }
 
       <DomainShowcase {...domains[1]}/>
