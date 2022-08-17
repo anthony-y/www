@@ -12,9 +12,7 @@ function DomainShowcase({title, cardLines, skills, image, darkColour, lightColou
   const workaround = (title == "Web" ? "pt-0" : "pt-16")
 
   const linkStyles = `
-    bg-gradient-to-br
-    ${theme == 'light' ? 'from-blue-400 to-blue-600' : 'from-orange-600 to-orange-700'}
-    dark:${lightColour}
+    transition duration-500 ${title == "Web" ? "bg-blue-400 hover:bg-white/30 dark:bg-orange-500 dark:hover:bg-white/10" : "bg-blue-900/60 dark:bg-violet-900/80 dark:hover:bg-white/10 hover:bg-white/30"}
     flex flex-row p-6 justify-center align-center
     w-full
     text-xl
@@ -35,7 +33,7 @@ function DomainShowcase({title, cardLines, skills, image, darkColour, lightColou
         <BasicCard cardLines={cardLines} />
 
         <a href="https://github.com/anthony-y" className={linkStyles}>
-          <p className="my-auto text-white dark:text-orange-900">View projects</p>
+          <p className={`my-auto text-white text-4xl`}>See all projects</p>
         </a>
       </div>
 
@@ -46,7 +44,7 @@ function DomainShowcase({title, cardLines, skills, image, darkColour, lightColou
         <BasicCard cardLines={cardLines} />
 
         <a href="https://github.com/anthony-y" className={linkStyles}>
-          <p className="my-auto text-white dark:text-orange-900">View projects</p>
+          <p className="my-auto text-white">See all projects</p>
         </a>
       </div>
     </div>

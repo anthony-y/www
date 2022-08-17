@@ -11,11 +11,11 @@ const NameHero = () => {
 
       <div className="flex flex-col gap-2 text-center">
 
-        <h2 className="text-3xl font-serif text-blue-400 to-blue-400 dark:text-myorange">
+        <h2 className="text-3xl font-serif text-blue-400 to-blue-400 dark:text-darkPrimary">
           Full-stack web developer by day
         </h2>
 
-        <h2 className="text-3xl font-serif text-mygreen">
+        <h2 className="text-3xl font-serif text-darkSecondary">
           Systems programmer by night
         </h2>
       </div>

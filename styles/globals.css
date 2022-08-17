@@ -11,7 +11,12 @@
 
 .blurry-gradient {
   aspect-ratio: 900/450;
-  background-image: url("/shapes/blurry-gradient.svg");
+  background-image: url("/shapes/blurry-gradient-day.svg");
+}
+
+.blurry-gradient-night {
+  aspect-ratio: 900/450;
+  background-image: url("/shapes/blurry-gradient-night.svg");
 }
 
 .day {

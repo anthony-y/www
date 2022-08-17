@@ -48,10 +48,10 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
         </div>
       </section>
 
-      <section className="bg-white max-h-[33vh] svg-background-cover blurry-gradient">
-        <article className="container mx-auto">
-          <h1 className="pt-28 flex justify-center text-black text-5xl font-bold align-center">Contact</h1>
-          <a href="mailto:anthonybaynham2001@gmail.com"><p className="hover:text-gray-700 transition flex flex-col justify-center items-center text-center pt-2 text-black text-2xl">anthonybaynham2001@gmail.com</p></a>
+      <section className={`bg-white max-h-[33vh] svg-background-cover ${theme == 'light' ? "blurry-gradient" : "blurry-gradient-night"}`}>
+        <article className="container mx-auto text-white dark:text-black">
+          <h1 className="pt-28 flex justify-center text-5xl font-bold align-center">Contact</h1>
+          <a href="mailto:anthonybaynham2001@gmail.com"><p className="hover:text-gray-700 transition flex flex-col justify-center items-center text-center pt-3 text-2xl">anthonybaynham2001@gmail.com</p></a>
         </article>
       </section>
 
@@ -68,8 +68,8 @@ export const getStaticProps = async () => {
     title: "Web",
     skills: new Array<Skill>('nextjs', 'ts', 'js', 'svelte', 'html', 'css', 'go', 'wordpress'),
     image: "/mrandmrs.png",
-    lightColour: "bg-blue-400",
-    darkColour: 'bg-myorange',
+    lightColour: "bg-lightPrimary",
+    darkColour: 'bg-darkPrimary',
     buttonClasses: "bg-gradient-to-l text-white from-blue-500 to-blue-600 hover:bg-gradient-to-br hover:text-blue-50/80 transition duration-300"
   }
 
@@ -82,8 +82,8 @@ export const getStaticProps = async () => {
     title: "Systems",
     skills: new Array<Skill>('c', 'cpp', 'go', 'csharp'),
     image: "/mrandmrs.png",
-    lightColour: "bg-blue-900",
-    darkColour: 'bg-mygreen',
+    lightColour: "bg-lightSecondary",
+    darkColour: 'bg-darkSecondary',
     buttonClasses: "bg-gradient-to-r text-white from-blue-700 to-blue-900 hover:bg-gradient-to-br hover:text-blue-50/80 transition duration-300"
   }
 
