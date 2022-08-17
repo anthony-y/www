@@ -1,4 +1,4 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { InferGetStaticPropsType } from 'next'
 import NameHero from '../components/NameHero'
 import DomainShowcase from '../components/DomainShowcase'
 import { DomainShowcaseProps, Project, Skill } from "../types"
@@ -39,11 +39,12 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
       </section>
 
       <section className="bg-white max-h-[33vh] svg-background-cover blurry-gradient">
-        <div className="container mx-auto">
+        <article className="container mx-auto">
           <h1 className="pt-28 flex justify-center text-black text-5xl font-bold align-center">Contact</h1>
           <a href="mailto:anthonybaynham2001@gmail.com"><p className="hover:text-gray-700 transition flex flex-col justify-center items-center text-center pt-2 text-black text-2xl">anthonybaynham2001@gmail.com</p></a>
-        </div>
+        </article>
       </section>
+
     </div>
   </>
 }

@@ -1,13 +1,13 @@
 const NameHero = () => {
-  return <div className="flex flex-row justify-center pb-10 pt-20 dark:bg-dark">
-    <div className="flex flex-col gap-6 align-center">
+  return <section className="flex flex-row justify-center pb-10 pt-20 dark:bg-dark">
+    <article className="flex flex-col gap-6 align-center">
 
-      <div className="flex flex-col gap-2">
+      <header className="flex flex-col gap-2">
         <p className="text-gray-400 text-center md:text-left">Hi, I'm</p>
         <h1 className="text-5xl lg:text-7xl font-bold text-center dark:text-white">
           Anthony Baynham
         </h1>
-      </div>
+      </header>
 
       <div className="flex flex-col gap-2 text-center">
 
@@ -19,8 +19,9 @@ const NameHero = () => {
           Systems programmer by night
         </h2>
       </div>
-    </div>
-  </div>
+      
+    </article>
+  </section>
 }
 
 export default NameHero
