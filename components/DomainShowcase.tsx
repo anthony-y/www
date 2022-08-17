@@ -12,7 +12,7 @@ function DomainShowcase({title, cardLines, skills, image, darkColour, lightColou
   const workaround = (title == "Web" ? "pt-0" : "pt-16")
 
   const linkStyles = `
-    transition duration-500 ${title == "Web" ? "bg-blue-400 hover:bg-white/30 dark:bg-orange-500 dark:hover:bg-white/10" : "bg-blue-900/60 dark:bg-violet-900/80 dark:hover:bg-white/10 hover:bg-white/30"}
+    transition duration-500 ${title == "Web" ? "hover:bg-blue-400 bg-white/30 dark:hover:bg-orange-500 dark:bg-white/10" : "hover:bg-blue-900/60 dark:hover:bg-violet-900/80 dark:bg-white/10 bg-white/30"}
     flex flex-row p-6 justify-center align-center
     w-full
     text-xl
