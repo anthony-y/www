@@ -7,6 +7,7 @@
   background-position: center;
   background-size: cover;
   width: 100%;
+  overflow: hidden;
 }
 
 .blurry-gradient {
@@ -20,22 +21,22 @@
 }
 
 .day {
-  aspect-ratio: 900/100;
+  aspect-ratio: 900/101;
   background-image: url("/shapes/wave-day-top.svg");
 }
 
 .wave-night {
-  aspect-ratio: 900/100;
+  aspect-ratio: 900/101;
   background-image: url("/shapes/wave-night-top.svg");
 }
 
 .day-bottom {
-  aspect-ratio: 900/100;
+  aspect-ratio: 900/101;
   background-image: url("/shapes/wave-day-bottom.svg");
 }
 
 .wave-night-bottom {
-  aspect-ratio: 900/100;
+  aspect-ratio: 900/101;
   background-image: url("/shapes/wave-night-bottom.svg");
 }
 
