@@ -4,6 +4,7 @@ import DomainShowcase from '../components/DomainShowcase'
 import { DomainShowcaseProps, Skill } from "../types"
 import { ThemeProvider } from '../lib/theme'
 import { useContext } from 'react'
+import { getAllBlogPosts } from '../lib/blog'
 
 function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) {
 
@@ -86,6 +87,9 @@ export const getStaticProps = async () => {
     darkColour: 'bg-darkSecondary',
     buttonClasses: "bg-gradient-to-r text-white from-blue-700 to-blue-900 hover:bg-gradient-to-br hover:text-blue-50/80 transition duration-300"
   }
+
+  const allPosts = await getAllBlogPosts()
+  console.log(await allPosts.json())
 
   return {
     props: {
