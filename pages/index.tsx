@@ -10,6 +10,19 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
   let [theme] = useContext(ThemeProvider)
 
   return <>
+
+    {/* Preload */}
+    <div className="hidden">
+      <img src="/shapes/blurry-gradient-day.svg"></img>
+      <img src="/shapes/blurry-gradient-night.svg"></img>
+      <img src="/shapes/wave-day-top.svg"></img>
+      <img src="/shapes/wave-night-top.svg"></img>
+      <img src="/shapes/wave-day-bottom.svg"></img>
+      <img src="/shapes/wave-night-bottom.svg"></img>
+      <img src="/shapes/wave-about-me-transition.svg"></img>
+      <img src="/shapes/wave-night-about-me-transition.svg"></img>
+    </div>
+
     <NameHero></NameHero>
 
     <section className="flex flex-col">
@@ -17,21 +30,32 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
       {
       // SVG shapes - we render based on `theme` so that the graphics will update reactively when the theme is changed.
       // Using Tailwind's `dark:` variant does not work.
-      theme == 'light' && <div className={`svg-background-cover day -mt-[1px]`}></div> ||
-      theme == 'dark'  && <div className={`svg-background-cover wave-night -mt-[1px]`}></div>
+      (
+      (theme == 'server' && <div className="svg-background-cover pb-20"></div>)
+      ||
+      (theme == 'light' && <div className={`svg-background-cover day -mt-[1px]`}></div>)
+      ||
+      (theme == 'dark'  && <div className={`svg-background-cover wave-night -mt-[1px]`}></div>)
+      )
       }
 
       <DomainShowcase {...domains[0]}/>
 
       {
-      theme == 'light' && <div className={`svg-background-cover day-bottom -mb-[1px] w-[100vw]`}></div> ||
+      theme == 'server' && <div className="svg-background-cover"></div>
+      || 
+      theme == 'light' && <div className={`svg-background-cover day-bottom -mb-[1px] w-[100vw]`}></div>
+      ||
       theme == 'dark'  && <div className={`svg-background-cover wave-night-bottom -mb-[1px]`}></div>
       }
 
       <DomainShowcase {...domains[1]}/>
 
       {
-      theme == 'light' && <div className={`svg-background-cover about-me-transition -mt-[1px]`}></div> ||
+      theme == 'server' && <div className="svg-background-cover pb-20"></div>
+      ||
+      theme == 'light' && <div className={`svg-background-cover about-me-transition -mt-[1px]`}></div>
+      ||
       theme == 'dark'  && <div className={`svg-background-cover about-me-transition-night -mt-[1px]`}></div>
       }
 

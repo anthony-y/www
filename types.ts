@@ -9,7 +9,7 @@ export type Skill = 'svelte' | 'cpp' | 'c' | 'csharp' | 'js' | 'css' | 'html' | 
 
 export type ShowcaseImage = StaticImageData | string
 
-export type SiteTheme = 'light' | 'dark'
+export type SiteTheme = 'light' | 'dark' | 'server'
 
 export interface DomainShowcaseProps {
   title: string
