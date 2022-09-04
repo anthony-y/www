@@ -3,7 +3,7 @@ import WorkInProgress from "../../components/WorkInProgress"
 import { BlogPost, getAllBlogPosts } from '../../lib/blog'
 
 function PostCard({ post }: { post: BlogPost} ) {
-  return <div className="rounded-lg flex flex-col gap-4 items-center border border-1 border-gray-200 p-8 shadow-sm">
+  return <div className="transition hover:bg-white/30 rounded-lg flex flex-col gap-4 items-center border border-1 border-gray-200 p-8 shadow-sm">
     <h1 className="text-3xl"><Link href={`/blog/${post.slug}`}>{post.title}</Link></h1>
     <p className="text-gray-400">
       {post.brief}
