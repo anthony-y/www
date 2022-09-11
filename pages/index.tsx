@@ -64,9 +64,9 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
 
         <div className="flex justify-center w-[75%] mx-auto">
           <article className="flex pt-3 flex-col gap-2">
-            <p>{`I’m currently a freelance full-stack developer, systems administrator and student. I’m looking for a new hybrid or remote opportunity as I head into this year of university.`}</p>
+            <p>{`I’m currently a freelance full-stack developer, systems administrator and student.`}</p>
             <p>{`Although I’ve been working professionally as a programmer since just 2021, my most “starred” GitHub repository, SharpECS, is a library I wrote at age 14 – seven years ago.`}</p>
-            <p>{`During the summer I reside on the south-coast, while the rest of the year I study Computer Science at the University of Sussex, and live in Brighton.`}</p>
+            <p>{`During the summer I reside in the New Forest, while the rest of the year I study Computer Science at the University of Sussex, and live in Brighton.`}</p>
           </article>
           {/* <Image src="/me.png" layout="fill"></Image> */}
         </div>
