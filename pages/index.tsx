@@ -59,7 +59,7 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
       theme == 'dark'  && <div className={`svg-background-cover about-me-transition-night -mt-[1px]`}></div>
       }
 
-      <section className="bg-white h-full w-full mx-auto pb-[20vh] dark:bg-dark dark:text-white -mt-[1px]">
+      <section className="bg-white h-full w-full mx-auto pb-[20vh] dark:bg-dark dark:text-white -mt-[1px] pt-12">
         <h1 className="flex justify-center text-black text-5xl font-bold align-center dark:text-white">About Me</h1>
 
         <div className="flex justify-center w-[75%] mx-auto">
@@ -75,7 +75,7 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
       <section className={`bg-white min-h-[40vh] md:max-h-[30vh] svg-background-cover ${theme == 'light' ? "blurry-gradient" : "blurry-gradient-night"}`}>
         <article className="container mx-auto text-white">
           <h1 className="pt-28 flex justify-center text-5xl font-bold align-center">Contact</h1>
-          <a href="mailto:anthonybaynham2001@gmail.com"><p className="hover:underline transition flex flex-col justify-center items-center text-center pt-3 text-2xl">anthonybaynham2001@gmail.com</p></a>
+          <a href="mailto:anthonybaynham2001@gmail.com"><p className="hover:underline transition flex flex-col justify-center items-center text-center pt-3 text-lg md:text-2xl">anthonybaynham2001@gmail.com</p></a>
         </article>
       </section>
 
