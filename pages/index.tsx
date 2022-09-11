@@ -63,7 +63,7 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
         <h1 className="flex justify-center text-black text-5xl font-bold align-center dark:text-white">About Me</h1>
 
         <div className="flex justify-center w-[75%] mx-auto">
-          <article className="flex pt-3 flex-col gap-2">
+          <article className="flex pt-3 flex-col gap-4 md:text-center">
             <p>{`I’m currently a freelance full-stack developer, systems administrator and student.`}</p>
             <p>{`Although I’ve been working professionally as a programmer since just 2021, my most “starred” GitHub repository, SharpECS, is a library I wrote at age 14 – seven years ago.`}</p>
             <p>{`During the summer I reside in the New Forest, while the rest of the year I study Computer Science at the University of Sussex, and live in Brighton.`}</p>
@@ -72,7 +72,7 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
         </div>
       </section>
 
-      <section className={`bg-white min-h-[40vh] svg-background-cover ${theme == 'light' ? "blurry-gradient" : "blurry-gradient-night"}`}>
+      <section className={`bg-white min-h-[40vh] md:max-h-[30vh] svg-background-cover ${theme == 'light' ? "blurry-gradient" : "blurry-gradient-night"}`}>
         <article className="container mx-auto text-white">
           <h1 className="pt-28 flex justify-center text-5xl font-bold align-center">Contact</h1>
           <a href="mailto:anthonybaynham2001@gmail.com"><p className="hover:underline transition flex flex-col justify-center items-center text-center pt-3 text-2xl">anthonybaynham2001@gmail.com</p></a>
