@@ -64,9 +64,13 @@ function Frontpage({ domains }: InferGetStaticPropsType<typeof getStaticProps>) 
 
         <div className="flex justify-center w-[75%] mx-auto">
           <article className="flex pt-3 flex-col gap-4 md:text-center">
-            <p>{`I’m currently a freelance full-stack developer, systems administrator and student.`}</p>
-            <p>{`Although I’ve been working professionally as a programmer since just 2021, my most “starred” GitHub repository, SharpECS, is a library I wrote at age 14 – seven years ago.`}</p>
-            <p>{`During the summer I reside in the New Forest, while the rest of the year I study Computer Science at the University of Sussex, and live in Brighton.`}</p>
+            <p>
+              Hi, I’m a full-stack developer and systems programmer based in Brighton, East
+              Sussex. I can work fluidly with a range of programming languages and
+              technologies.
+              I’ve been working professionally in the industry since 2021, but my most “starred”
+              GitHub repository, SharpECS, is a library I wrote at age 14 – over eight years ago.
+            </p>
           </article>
           {/* <Image src="/me.png" layout="fill"></Image> */}
         </div>
